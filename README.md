@@ -99,7 +99,9 @@ function runQuery() {
 
 
 
------------------------------------ Look at the query code in the function runQuery():
+----------------------------------- 
+
+Look at the query code in the function runQuery():
 
 SELECT
     LOWER(word) AS word,
@@ -116,14 +118,18 @@ FROM `bigquery-public-data.samples.shakespeare`
 GROUP BY word ORDER BY count DESC LIMIT 10
 
 
---------------------------------------------------------Create a chart in Google Sheets
+--------------------------------------------------------
+
+Create a chart in Google Sheets
 
 
 SELECT LOWER(word) AS word, sum(word_count) AS count
 FROM `bigquery-public-data.samples.shakespeare`
 GROUP BY word ORDER BY count DESC LIMIT 10
 
--------------------------------------------------------------------------Return spreadsheet: In the above code, createColumnChart()
+-------------------------------------------------------------------------
+
+Return spreadsheet: In the above code, createColumnChart()
 
 
 /**
@@ -161,7 +167,9 @@ Logger.log('Results spreadsheet created: %s', spreadsheet.getUrl());
 }
 
 
--------------------- Drive createBigQueryPresentation() function:
+--------------------
+
+Drive createBigQueryPresentation() function:
 
 /**
  * Runs a BigQuery query, adds data and a chart in a Sheet.
@@ -171,7 +179,9 @@ function createBigQueryPresentation() {
   createColumnChart(spreadsheet);
 }
 
------------------------- Put the createBigQueryPresentation() function right after this code block:
+------------------------ 
+
+Put the createBigQueryPresentation() function right after this code block:
 
 // Filename for data results
 var QUERY_NAME = "Most common words in all of Shakespeare's works";
@@ -187,7 +197,9 @@ var QUERY_NAME = "Most common words in all of Shakespeare's works";
 var PROJECT_ID = 'project-id-4323960745859879834';
 if (!PROJECT_ID) throw Error('Project ID is required in setup');
 
------------------ Make code more reusable:
+-----------------
+
+Make code more reusable:
 
 // Filename for data results
 var QUERY_NAME = "Most common words in all of Shakespeare's works";
@@ -195,7 +207,9 @@ var QUERY_NAME = "Most common words in all of Shakespeare's works";
 var PROJECT_ID = 'project-id-4323960745859879834';
 if (!PROJECT_ID) throw Error('Project ID is required in setup');
 
---------The Cloud shell
+--------
+
+The Cloud shell
 
 /**
  * Runs a BigQuery query, adds data and a chart in a Sheet.
@@ -348,14 +362,6 @@ function createColumnChart(spreadsheet) {
 
 
 
-
-
-
-
-
-
-
-
 Create slide deck: 
 
 /**
@@ -375,7 +381,9 @@ function createSlidePresentation(spreadsheet, chart) {
     'Google Apps Script, BigQuery, Sheets, Slides');
     
     
-    ---------------------createSlidePresentation()function:
+    ---------------------
+    
+    createSlidePresentation()function:
 
 
     
@@ -398,7 +406,9 @@ function createSlidePresentation(spreadsheet, chart) {
   
   
   
-  ------------------------------- Add this final snippet to the function:
+  -------------------------------
+  
+  Add this final snippet to the function:
 
 
   
